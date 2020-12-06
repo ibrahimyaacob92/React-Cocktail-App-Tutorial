@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 
 // import pages
@@ -9,7 +9,6 @@ import Error from './pages/Error'
 
 // import components
 import Navbar from './components/Navbar'
-import Cocktail from './components/Cocktail';
 
 function App() {
   return (

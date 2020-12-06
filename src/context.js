@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect } from 'react'
 import { useCallback } from 'react'
 
 const url = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s='
-const url2 = 'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i='
+
 const AppContext = React.createContext()
 
 const AppProvider = ({ children }) => {
@@ -10,7 +10,7 @@ const AppProvider = ({ children }) => {
   const [searchTerm, setSearchTerm] = useState('a')
   const [cocktails, setCocktails] = useState([])
 
-  const fetchDrinks = async () => {
+  const fetchDrinks =async () => {
     setLoading(true)
     try {
       const response = await fetch(`${url}${searchTerm}`)
@@ -31,8 +31,13 @@ const AppProvider = ({ children }) => {
     }
   }
 
+  const printer = () => {
+    console.log("tester hellow")
+  }
+
   useEffect(() =>{
     fetchDrinks()
+    printer()
   },[searchTerm])
 
   return <AppContext.Provider value={{
